@@ -1,5 +1,11 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { toast } from "sonner";
+import { authClient } from "~/auth/client";
+import { Button } from "~/components/ui/button";
 import {
   Form,
   FormControl,
@@ -9,15 +15,8 @@ import {
   FormMessage,
   useForm,
 } from "~/components/ui/form";
-import { type SignUpSchema, signUpSchema } from "~/validators/auth.schema";
-import { toast } from "sonner";
-import { Label } from "~/components/ui/label";
 import { Input } from "~/components/ui/input";
-import { Button } from "~/components/ui/button";
-import { authClient } from "~/auth/client";
-import { useState } from "react";
-import { Loader2 } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { type SignUpSchema, signUpSchema } from "~/validators/auth.schema";
 
 export function SignUpForm() {
   const form = useForm({

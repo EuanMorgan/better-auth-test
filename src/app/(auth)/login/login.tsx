@@ -1,10 +1,6 @@
 import Link from "next/link";
 import { LoginForm } from "~/app/(auth)/login/login-form";
 
-import { Button } from "~/components/ui/button";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-
 export function Login() {
   return (
     <div className="w-full lg:grid h-full lg:grid-cols-2 ">
