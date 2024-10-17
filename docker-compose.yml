@@ -1,0 +1,16 @@
+# This can be used to get a MySQL database running locally for testing
+services:
+  betterauth:
+    image: mysql:9.0
+    restart: always
+    environment:
+      - MYSQL_DATABASE=testdb
+      - MYSQL_ROOT_PASSWORD=testpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+volumes:
+  db:
+    driver: local
